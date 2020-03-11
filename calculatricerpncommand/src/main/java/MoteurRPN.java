@@ -10,7 +10,55 @@ public class MoteurRPN extends Interpreteur{
 		pile.add(op); 
 	}
 	
-	public void operation_operateur() {
+	public void addition (double op1, double op2) {
+		double res = op1+op2; 
+	   pile.add(res); 
+	}
+	
+	public void soustraction (double op1, double op2) {
+		double res = op1 - op2; 
+	   pile.add(res); 
+	}
+	
+	public void multiplication (double op1, double op2) {
+		double res = op1 * op2; 
+	   pile.add(res); 
+	}
+	
+	public void division (double op1, double op2) {
+		double res = op1 / op2; 
+		   pile.add(res); 
+	}
+	public double pop () {
+		double res = pile.get(pile.size());
+		pile.remove(pile.size());
+		return res; 
+	}
+	
+	
+	public void operation_operateur(String op) {
+		double op1 = pop();
+		double op2 = pop();
+		
+		switch(op){
+		case "+": 
+		addition(op1,op2);
+		break;
+		
+		case "-": 
+	    soustraction(op1,op2);
+		break;
+		
+		case "*": 
+		multiplication(op1,op2);
+		break;
+		
+		case "division": 
+		division(op1,op2);
+		break;
+		
+			
+		}
 		
 	}
  
