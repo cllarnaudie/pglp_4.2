@@ -1,5 +1,9 @@
 package main.java;
 
-public class MoteurRPN {
+public class MoteurRPN extends Interpreteur{
+	
+	public MoteurRPN() {
+		
+	}
 
 }
