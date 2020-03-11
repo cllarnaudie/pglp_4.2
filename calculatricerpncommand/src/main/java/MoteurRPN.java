@@ -57,6 +57,14 @@ public class MoteurRPN extends Interpreteur{
 		division(op1,op2);
 		break;
 		
+		case "undo":
+		undo(); 
+		break; 
+		
+		case "quit":
+		quit(); 
+		break;
+		
 			
 		}
 		
