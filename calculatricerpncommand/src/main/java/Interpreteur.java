@@ -3,7 +3,11 @@ import java.util.ArrayList;
 
 
 public class Interpreteur {
-	private ArrayList<Double>pile;
+	protected ArrayList<Double>pile;
+	
+	public Interpreteur() {
+		pile = new ArrayList<Double>(); 
+	}
 
 public void undo() {
 	pile.remove(pile.size());
