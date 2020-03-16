@@ -3,15 +3,55 @@
   <groupId>calculatricerpncommand</groupId>
   <artifactId>calculatricerpncommand</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  
+     <!-- identifiant du projet -->
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>  <!--version de junit  -->
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+    <!-- fin identifiant du projet   -->
+  
+  
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
+    
+    
+        <!--Checkstyle-->
+              <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>3.1.0</version>
+          <reportSets>
+            <reportSet>
+              <reports>
+                <report>checkstyle</report>
+              </reports>
+            </reportSet>
+          </reportSets>
+        </plugin>
+          <!--fin du Checkstyle-->  
+          
+                 <!--Findbugs-->  
+         <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>3.0.5</version>
+      </plugin>
+      <!--fin du Findbugs-->  
+    
+    
+    
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.6.1</version>
+        <version>3.8.0</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <release>11</release>
         </configuration>
       </plugin>
     </plugins>
