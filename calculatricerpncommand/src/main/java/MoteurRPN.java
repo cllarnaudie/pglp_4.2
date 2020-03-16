@@ -1,5 +1,6 @@
 package main.java;
 
+
 public class MoteurRPN extends Interpreteur{
 	
 	public MoteurRPN() {
@@ -10,25 +11,32 @@ public class MoteurRPN extends Interpreteur{
 		pile.add(op); 
 	}
 	
-	public void addition (double op1, double op2) {
+	public double addition (double op1, double op2) {
 		double res = op1+op2; 
 	   pile.add(res); 
+	   return res; 
 	}
 	
-	public void soustraction (double op1, double op2) {
+	public double soustraction (double op1, double op2) {
 		double res = op1 - op2; 
 	   pile.add(res); 
+	   return res; 
 	}
 	
-	public void multiplication (double op1, double op2) {
+	public double multiplication (double op1, double op2) {
 		double res = op1 * op2; 
 	   pile.add(res); 
+	   return res; 
 	}
 	
-	public void division (double op1, double op2) {
+	public double division (double op1, double op2) {
 		double res = op1 / op2; 
 		   pile.add(res); 
+		   return res; 
 	}
+	
+
+	
 	public double pop () {
 		double res = pile.get(pile.size());
 		pile.remove(pile.size());
@@ -39,7 +47,7 @@ public class MoteurRPN extends Interpreteur{
 	public void operation_operateur(String op) {
 		double op1 = pop();
 		double op2 = pop();
-		
+
 		switch(op){
 		case "+": 
 		addition(op1,op2);
@@ -64,8 +72,6 @@ public class MoteurRPN extends Interpreteur{
 		case "quit":
 		quit(); 
 		break;
-		
-			
 		}
 		
 	}
