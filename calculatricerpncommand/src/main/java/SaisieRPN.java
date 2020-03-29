@@ -3,23 +3,38 @@ import java.util.Scanner;
 
 public class SaisieRPN {
 
-	//java.util.Scanner scanner; 
-	Scanner scanner; 
-	MoteurRPN moteur; 
+	private static SaisieRPN instance; // instance unique
+	private Scanner scanner; 
+	private MoteurRPN moteur; 
 	
-	public SaisieRPN() {
+	/**
+	 * contructeur prive
+	 */
+	private SaisieRPN() {
 		//scanner = new java.util.Scanner (System.in); 
 		scanner   = new Scanner (System.in); 
-		moteur = new MoteurRPN(); 
+		moteur = MoteurRPN.getInstance(); 
+	}
+	
+	public static SaisieRPN getInstance () {
+		if (instance == null) {
+			instance = new SaisieRPN(); 
+		}
+		return instance; 
 	}
 
+	
+	/**
+	 * Lit et traite la saisie
+	 */
 	public void lire_entree() {
-		
-		if (scanner.hasNextFloat()) {
-			moteur.operation_operande (scanner.nextFloat());
+		// lecture d un nombre 
+		if (scanner.hasNextInt()) {
+			moteur.enregistreOperande (scanner.nextInt());
 		}
+		// lecture d une operation
 		else {
-			moteur.operation_operateur(scanner.next());
+			moteur.appliqueOperation(scanner.next());
 		}
 	}
 }
