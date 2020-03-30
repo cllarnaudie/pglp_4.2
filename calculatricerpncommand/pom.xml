@@ -131,22 +131,22 @@
             </reportSet>
           </reportSets>
         </plugin>
-          <!--fin du Checkstyle-->   
+          <!--fin du Checkstyle--> 
     
-    
+     
       <!--Findbugs-->  
          <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.5</version>
-      </plugin>
+          <version>3.0.5</version>        
+        </plugin>
       <!--fin du Findbugs-->  
       
       
-       <!--Spotbugs--> 
+       <!--Spotbugs --> 
       <plugin>
         <groupId>com.github.spotbugs</groupId>
-        <artifactId>spotbugs-maven-plugin</artifactId>
+          <artifactId>spotbugs-maven-plugin</artifactId>
         <version>4.0.0-SNAPSHOT</version>
       </plugin>
         <!--fin du spotbug-->  
