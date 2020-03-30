@@ -1,20 +1,19 @@
 package main.java;
 
 
-/**
- * Classe principale 
- * 
+/** Classe principale
  * Utilisation du design pattern : Singleton
  * @author claire
- *
  */
+
 public class CalculatriceRPN {
 	
-	private static CalculatriceRPN instance; // instance unique
+	private static CalculatriceRPN instance; /*instance unique*/
 	
-	private CalculatriceRPN() { // constructeur prive
-		
-	}
+	/**
+	 * constructeur prive
+	 * */
+	private CalculatriceRPN() { }
 	
 	public static CalculatriceRPN getInstance () {
 		if (instance == null) {

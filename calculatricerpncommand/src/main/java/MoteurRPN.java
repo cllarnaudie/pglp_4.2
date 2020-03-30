@@ -9,9 +9,9 @@ import java.util.ArrayList;
 
 public class MoteurRPN implements Interpreteur{
 	
-	private static MoteurRPN instance; // instance unique de la classe
+	private static MoteurRPN instance; /**instance unique de la classe*/
 	
-	protected  static ArrayList<Integer>pile;  // pile d operande
+	protected  static ArrayList<Integer>pile;  /**pile d operande*/
 	
 	/**
 	 * constructeur prive
@@ -126,7 +126,7 @@ public class MoteurRPN implements Interpreteur{
 			
 			res = pile.get(indice);
 		
-			pile.remove(indice);  //supression de l operande
+			pile.remove(indice);  /**supression de l operande*/
 		}
 		
 		return res; 
@@ -168,14 +168,12 @@ public class MoteurRPN implements Interpreteur{
 		else if (op.equals("exit")) {
 			quit();
 		}
-		
-		
 	}
  
 	/**
 	 * Affiche la pile
 	 */
-	private void affiche_pile() {
+	public void affiche_pile() {
 		
 		System.out.println("Pile ");
 		int i; 
@@ -187,7 +185,5 @@ public class MoteurRPN implements Interpreteur{
 		}
 
 	}
-	
-	
-	 
+		 
 }
