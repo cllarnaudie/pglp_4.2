@@ -18,7 +18,6 @@ public class TestMoteurRPN {
 	
 		assertEquals(30, res);
 		System.out.println ("Le resultat de l'addition est " + res); 
-		
 	}
 	
 	
