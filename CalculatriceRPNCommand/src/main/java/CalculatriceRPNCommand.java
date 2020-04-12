@@ -15,7 +15,7 @@ public class CalculatriceRPNCommand {
 	 * */
 	private CalculatriceRPNCommand() { }
 	
-	public static CalculatriceRPNCommand getInstance () {
+	public static CalculatriceRPNCommand getInstance() {
 		if (instance == null) {
 			instance = new CalculatriceRPNCommand(); 
 		}
@@ -23,7 +23,7 @@ public class CalculatriceRPNCommand {
 	}
 
     
-	public static void run (String [] args) {
+	public static void run(String[] args) {
 		SaisieRPN saisie = SaisieRPN.getInstance();
 		
 		while (true) {
@@ -35,8 +35,7 @@ public class CalculatriceRPNCommand {
 	 * 
 	 * @param args
 	 */
-	public static void main (String [] args) {
+	public static void main (String[] args) {
 		CalculatriceRPNCommand.getInstance().run(args);
-
 	}
 }

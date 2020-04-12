@@ -8,9 +8,9 @@ package main.java;
  */
 
 public interface Interpreteur {
-		
-public void undo() ;
-	
-public void quit() ;  
+
+	public void undo();
+
+	public void quit();  
 
 }

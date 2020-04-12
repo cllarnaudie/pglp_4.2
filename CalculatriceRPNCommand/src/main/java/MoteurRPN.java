@@ -7,7 +7,7 @@ import java.util.ArrayList;
  *
  */
 
-public class MoteurRPN implements Interpreteur{
+public class MoteurRPN implements Interpreteur {
 	
 	private static MoteurRPN instance; /**instance unique de la classe*/
 	
@@ -24,9 +24,9 @@ public class MoteurRPN implements Interpreteur{
 	
 	/**
 	 * instance de la classe
-	 * @return
+	 * @return instance
 	 */
-	public static MoteurRPN getInstance () {
+	public static MoteurRPN getInstance() {
 		if (instance == null) {
 			instance = new MoteurRPN(); 
 		}
@@ -36,13 +36,14 @@ public class MoteurRPN implements Interpreteur{
 	
 	@Override
 	public void undo() {
-		if (pile.size()>0) {
-			int indice = pile.size() -1;
+		if (pile.size() > 0) {
+			int indice = pile.size() - 1;
 			pile.remove(indice);
 			affiche_pile();
 		}
 		
 	}
+	
 	@Override
 	public void quit() {
 		System.out.println("Fin de l'application");
@@ -53,36 +54,34 @@ public class MoteurRPN implements Interpreteur{
 	 * Ajout d un operande au sommet de la pile
 	 * @param op
 	 */
-	public void enregistreOperande (int op) {
+	public void enregistreOperande(int op) {
 		pile.add(op);
 		affiche_pile();
-		
 	}
 	
 	/**
 	 * Addition
 	 * @param op1
 	 * @param op2
-	 * @return
+	 * @return res
 	 */
-	public int addition (int op1, int op2) {
-		int res = op1+op2; 
+	public int addition(int op1, int op2) {
+		int res = op1 + op2; 
 	   pile.add(res); 
-	   System.out.println (res);
+	   System.out.println(res);
 	   return res; 
 	}
 	
 	/**
-	 * Soustraction
+	 * soustraction
 	 * @param op1
 	 * @param op2
-	 * @return
+	 * @return res
 	 */
-	public int soustraction (int op1, int op2) {
+	public int soustraction(int op1, int op2) {
 		int res = op1 - op2; 
 	   pile.add(res); 
-	   System.out.println (res);
-
+	   System.out.println(res);
 	   return res; 
 	}
 	
@@ -90,12 +89,12 @@ public class MoteurRPN implements Interpreteur{
 	 * Multiplication
 	 * @param op1
 	 * @param op2
-	 * @return
+	 * @return res
 	 */
-	public int multiplication (int op1, int op2) {
+	public int multiplication(int op1, int op2) {
 		int res = op1 * op2; 
 	   pile.add(res); 
-	   System.out.println (res);
+	   System.out.println(res);
 	   return res; 
 	}
 	
@@ -103,26 +102,26 @@ public class MoteurRPN implements Interpreteur{
 	 * Division
 	 * @param op1
 	 * @param op2
-	 * @return
+	 * @return res
 	 */
-	public int division (int op1, int op2) {
+	public int division(int op1, int op2) {
 		int res = op1 / op2;		
 		pile.add(res); 
-		System.out.println (res);
+		System.out.println(res);
 		return res; 
 	}
 	
 
 	/**
 	 * Recherche de l operande en haut de la pile
-	 * @return
+	 * @return res
 	 */
-	private int pop () {
+	private int pop() {
 		int res = 0;
-		int indice = pile.size() ;
+		int indice = pile.size();
 		
 		if (indice >= 1) {
-			indice = indice -1 ;
+			indice = indice - 1;
 			
 			res = pile.get(indice);
 		
@@ -138,36 +137,44 @@ public class MoteurRPN implements Interpreteur{
 	 */
 	public void appliqueOperation(String op) {
 				
-			
 		if (op.equals("+")) {
 			int op1 = pop();
 			int op2 = pop();
-			addition(op1,op2);
+			addition(op1, op2);
+			
 		}
+		
 		else if (op.equals("-")) {
 			int op1 = pop();
 			int op2 = pop();
-			soustraction(op1,op2);
+			soustraction(op1, op2);
+			
 		}
+		
 		else if (op.equals("*")) {
 			int op1 = pop();
 			int op2 = pop();
-			multiplication(op1,op2);
+			multiplication(op1, op2);
 		}
+		
 		else if (op.equals("/")) {
 			int op1 = pop();
 			int op2 = pop();
-			division(op1,op2);
+			division(op1, op2);
 		}
+		
 		else if (op.equals("undo")) {
 			undo();
 		}
+		
 		else if (op.equals("quit")) {
 			quit();
 		}
+		
 		else if (op.equals("exit")) {
 			quit();
 		}
+		
 	}
  
 	/**
@@ -178,9 +185,8 @@ public class MoteurRPN implements Interpreteur{
 		System.out.println("Pile ");
 		int i; 
 		if (pile.size() > 0) {
-			for (i=0; i<pile.size(); i++) {
-				System.out.println(pile.get(i) + " " + " indice pile " + 
-						i); 
+			for (i = 0; i < pile.size(); i++) {
+				System.out.println(pile.get(i) + " " + " indice pile " + i); 
 			}
 		}
 
