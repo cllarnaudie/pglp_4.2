@@ -5,11 +5,10 @@ import org.junit.Test;
 import main.java.MoteurRPN;
 
 public class TestMoteurRPN {
-
 	
 	@Test
 	public final void testAddition() {
-		System.out.println ("\ntestAddition ");
+		System.out.println("\ntestAddition ");
 		MoteurRPN mot = MoteurRPN.getInstance();
 		int d1 = 10;
 		int d2 = 20; 
@@ -17,26 +16,26 @@ public class TestMoteurRPN {
 		res = mot.addition(d1, d2);
 	
 		assertEquals(30, res);
-		System.out.println ("Le resultat de l'addition est " + res); 
+		System.out.println("Le resultat de l'addition est " + res); 
 	}
 	
 	
 	@Test
 	public final void testSoustraction() {
-		System.out.println ("\ntestSoustraction ");
+		System.out.println("\ntestSoustraction ");
 		MoteurRPN mot = MoteurRPN.getInstance();
 		int d1 = 20;
 		int d2 = 10; 
 		int res; 
-		res = mot.soustraction(d1, d2);
+		res = mot.soustraction(d1,d2);
 	
 		assertEquals(10, res);
-		System.out.println ("Le resultat de la soustraction est " + res); 
+		System.out.println("Le resultat de la soustraction est " + res); 
 	}
 	
 	@Test
 	public final void testMultiplication() {
-		System.out.println ("\ntestMultiplication ");
+		System.out.println("\ntestMultiplication ");
 		MoteurRPN mot = MoteurRPN.getInstance();
 		int d1 = 20;
 		int d2 = 10; 
@@ -48,7 +47,7 @@ public class TestMoteurRPN {
 	
 	@Test
 	public final void testDivision() {
-		System.out.println ("\ntestDivision ");
+		System.out.println("\ntestDivision ");
 		MoteurRPN mot = MoteurRPN.getInstance();
 		int d1 = 20;
 		int d2 = 10; 
@@ -60,7 +59,7 @@ public class TestMoteurRPN {
 	
 	@Test
 	public final void testEnregistreOperande() {
-		System.out.println ("\ntestEnregistreOperande ");
+		System.out.println("\ntestEnregistreOperande ");
 		MoteurRPN mot = MoteurRPN.getInstance();
 		mot.enregistreOperande(10);
 		mot.enregistreOperande(20);
@@ -74,7 +73,6 @@ public class TestMoteurRPN {
 		MoteurRPN mot = MoteurRPN.getInstance();
 		mot.enregistreOperande(50);
 		mot.enregistreOperande(4);
-		
 		mot.appliqueOperation("+");
 		}
 		
